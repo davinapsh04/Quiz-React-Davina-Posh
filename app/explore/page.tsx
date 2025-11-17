@@ -1,6 +1,5 @@
 import React from "react";
 
-// bagian atas file: tipe
 type MarineResponse = {
   latitude: number;
   longitude: number;
@@ -27,8 +26,8 @@ async function fetchMarine(lat: number, lon: number) {
 }
 
 type WeatherResponse = {
-  hourly?: { time?: string[]; windspeed_10m?: number[]; winddirection_10m?: number[]; [k:string]: any };
-  hourly_units?: Record<string,string>;
+  hourly?: { time?: string[]; windspeed_10m?: number[]; winddirection_10m?: number[];[k: string]: any };
+  hourly_units?: Record<string, string>;
 };
 
 async function fetchWind(lat: number, lon: number) {
@@ -113,11 +112,10 @@ export default async function ExplorePage({
             </div>
 
             <div className="border rounded p-4">
-              <h2 className="font-semibold">Beach photos (Unsplash)</h2>
-              <p className="text-sm text-gray-600">Gambar ilustrasi pantai — diambil dari Unsplash collection.</p>
+              <h2 className="font-semibold">Beach photos</h2>
+              <p className="text-sm text-gray-600">Ilustrasi pantai — diambil dari Unsplash collection.</p>
               <div className="mt-3 grid grid-cols-2 gap-2">
                 {imageUrls.map((url, idx) => (
-                  // eslint-disable-next-line @next/next/no-img-element
                   <img key={idx} src={url} alt={`Beach ${idx + 1}`} className="w-full h-40 object-cover rounded" />
                 ))}
               </div>
